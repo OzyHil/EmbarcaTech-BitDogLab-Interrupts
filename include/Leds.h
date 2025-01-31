@@ -8,6 +8,6 @@
 uint32_t RGBMatrix(RGB color);
 void Draw(double*, uint32_t, refs);
 double* Drawing(int);
-void BlinkRGBLed(int, int);
+void BlinkRGBLed(int);
 
 #endif
