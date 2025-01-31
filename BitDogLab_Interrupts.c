@@ -13,19 +13,16 @@
 
 refs pio;
 uint32_t valorLed;
-uint8_t count = 1;
+uint8_t count = 0;
 double *drawing;
 
 void HandleInterruption(uint gpio, uint32_t events)
 {
     if (gpio == 5)
     {
-        if (count < 10)
+        if (count < 9)
         {
             count++;
-            // printf("count: %d\n", count);
-            // printf("pio: %d\n", pio);
-
             drawing = Drawing(count);
             Draw(drawing, valorLed, pio);
         }
@@ -47,7 +44,7 @@ int main()
     SetInterruption(BUTTON_A);
 
     SetOutput(RED_LED);
-    
+
     double *drawing = Drawing(0);
     Draw(drawing, valorLed, pio);
 
