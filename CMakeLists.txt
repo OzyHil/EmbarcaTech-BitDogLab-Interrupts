@@ -44,9 +44,14 @@ pico_set_program_version(BitDogLab_Interrupts "0.1")
 pico_enable_stdio_uart(BitDogLab_Interrupts 1)
 pico_enable_stdio_usb(BitDogLab_Interrupts 1)
 
+pico_generate_pio_header(BitDogLab_Interrupts ${CMAKE_CURRENT_LIST_DIR}/pio_matrix.pio)
+
 # Add the standard library to the build
-target_link_libraries(BitDogLab_Interrupts
-        pico_stdlib)
+target_link_libraries(BitDogLab_Interrupts PRIVATE
+        pico_stdlib
+        hardware_pio
+	    hardware_adc
+        pico_bootrom)
 
 # Add the standard include files to the build
 target_include_directories(BitDogLab_Interrupts PRIVATE
