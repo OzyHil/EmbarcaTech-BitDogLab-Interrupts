@@ -15,16 +15,23 @@ refs pio;
 uint32_t valorLed;
 uint8_t count = 0;
 double *drawing;
+static volatile uint32_t lastTimeA = 0;
 
 void HandleInterruption(uint gpio, uint32_t events)
 {
+    uint32_t currentTime = to_us_since_boot(get_absolute_time());
+
     if (gpio == 5)
     {
-        if (count < 9)
+        if (currentTime - lastTimeA > 200000)
         {
-            count++;
-            drawing = Drawing(count);
-            Draw(drawing, valorLed, pio);
+            lastTimeA = currentTime;
+            if (count < 9)
+            {
+                count++;
+                drawing = Drawing(count);
+                Draw(drawing, valorLed, pio);
+            }
         }
     }
 }
