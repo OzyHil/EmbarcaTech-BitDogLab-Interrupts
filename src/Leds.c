@@ -140,8 +140,7 @@ double *Drawing(int drawing)
     }
 }
 
-void BlinkRGBLed(int pin, int time)
+void BlinkRGBLed(int pin)
 {
     gpio_put(pin, !gpio_get(pin));
-    sleep_ms(time);
 }

@@ -12,6 +12,7 @@
 #include "pio_matrix.pio.h"
 
 #define BUTTON_A 5
+#define BUTTON_B 6
 #define RED_LED 13
 #define LED_MATRIX 7
 
