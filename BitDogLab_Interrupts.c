@@ -39,7 +39,7 @@ int main()
     double *drawing = Drawing(0);
     Draw(drawing, valorLed, pio, color);
 
-    // Configura o timer para piscar o LED a cada 100 ms
+    // Configura o timer para alternar o estado do LED a cada 100 ms
     struct repeating_timer timer;
     add_repeating_timer_ms(100, BlinkLedCallback, NULL, &timer);
 
