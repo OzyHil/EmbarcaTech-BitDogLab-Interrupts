@@ -11,23 +11,28 @@
 #include "pico/bootrom.h"
 #include "pio_matrix.pio.h"
 
-#define BUTTON_A 5 // Pino do Botão A
-#define BUTTON_B 6 // Pino do Botão B
-#define RED_LED 13 // Pino do LED vermelho
-#define LED_MATRIX 7
+#define BUTTON_A 5   // Pino do Botão A
+#define BUTTON_B 6   // Pino do Botão B
+#define RED_LED 13   // Pino do LED vermelho
+#define LED_MATRIX 7 // Pino da matriz de LEDs WS2812
 
-typedef struct PIORefs {
+// Struct para manipulação da PIO
+typedef struct PIORefs
+{
     PIO ref;
     uint offset;
     uint stateMachine;
 } refs;
 
-typedef struct RGB {
+// Struct para manipulação das cores dos LEDs
+typedef struct RGB
+{
     int8_t red;
     int8_t green;
     int8_t blue;
 } RGB;
 
+// Funções de configuração
 refs InitConf();
 refs InitPIO();
 void SetInput(int);
