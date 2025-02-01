@@ -3,30 +3,29 @@
 uint32_t RGBMatrix(RGB color)
 {
     unsigned char R, G, B;
-    R = color.red * 255;
-    G = color.green * 255;
-    B = color.blue * 255;
+    R = color.red;
+    G = color.green;
+    B = color.blue;
     return (G << 24) | (R << 16) | (B << 8);
 }
 
-void Draw(double *drawing, uint32_t valorLed, refs pio)
+void Draw(double *drawing, uint32_t valorLed, refs pio, RGB color)
 {
     RGB finalColor;
 
     for (int16_t i = (NUM_PIXELS)-1; i >= 0; i--)
     {
-
         if (drawing[i])
         {
-            finalColor.red = 0.1;
-            finalColor.green = 0.2;
-            finalColor.blue = 0.3;
+            finalColor.red = color.red;
+            finalColor.green = color.green;
+            finalColor.blue = color.blue;
         }
         else
         {
-            finalColor.red = 0.0;
-            finalColor.green = 0.0;
-            finalColor.blue = 0.0;
+            finalColor.red = 0;
+            finalColor.green = 0;
+            finalColor.blue = 0;
         }
         valorLed = RGBMatrix(finalColor);
         pio_sm_put_blocking(pio.ref, pio.stateMachine, valorLed);
@@ -35,7 +34,7 @@ void Draw(double *drawing, uint32_t valorLed, refs pio)
 
 double *Drawing(int drawing)
 {
-    // Desenho X
+    // Desenhos dos números de  0 à 9
     static double drawing0[] = {
         0.0, 1.0, 1.0, 1.0, 0.0,
         0.0, 1.0, 0.0, 1.0, 0.0,
@@ -138,9 +137,4 @@ double *Drawing(int drawing)
     default:
         return drawing0;
     }
-}
-
-void BlinkRGBLed(int pin)
-{
-    gpio_put(pin, !gpio_get(pin));
 }
