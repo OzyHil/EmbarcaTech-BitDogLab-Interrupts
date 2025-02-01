@@ -37,7 +37,7 @@ int main()
     add_repeating_timer_ms(100, BlinkLedCallback, NULL, &timer);
 
     while (true){
-        sleep(1);
+        sleep_ms(1);
     }
 }
 
