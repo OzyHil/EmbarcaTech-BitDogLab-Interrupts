@@ -6,7 +6,7 @@
 #include <General.h>
 
 uint32_t RGBMatrix(RGB color);
-void Draw(double*, uint32_t, refs);
+void Draw(double*, uint32_t, refs, RGB);
 double* Drawing(int);
 void BlinkRGBLed(int);
 

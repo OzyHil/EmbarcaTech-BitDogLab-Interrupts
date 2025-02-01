@@ -11,9 +11,9 @@
 #include "pico/bootrom.h"
 #include "pio_matrix.pio.h"
 
-#define BUTTON_A 5
-#define BUTTON_B 6
-#define RED_LED 13
+#define BUTTON_A 5 // Pino do Botão A
+#define BUTTON_B 6 // Pino do Botão B
+#define RED_LED 13 // Pino do LED vermelho
 #define LED_MATRIX 7
 
 typedef struct PIORefs {
@@ -23,9 +23,9 @@ typedef struct PIORefs {
 } refs;
 
 typedef struct RGB {
-    double red;
-    double green;
-    double blue;
+    int8_t red;
+    int8_t green;
+    int8_t blue;
 } RGB;
 
 refs InitConf();
