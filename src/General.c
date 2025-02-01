@@ -1,5 +1,6 @@
 #include <General.h>
 
+// Inicializa a configuração do PIO e do clock do sistema
 refs InitConf()
 {
     refs pio;
@@ -12,6 +13,7 @@ refs InitConf()
     return pio;
 }
 
+// Inicializa o PIO e configura o programa da matriz de LEDs
 refs InitPIO()
 {
     refs pio = InitConf();
@@ -19,6 +21,7 @@ refs InitPIO()
     return pio;
 }
 
+// Inicialiaza e configura um pino como entrada com pull-up ativado
 void SetInput(int pin)
 {
     gpio_init(pin);
@@ -26,9 +29,10 @@ void SetInput(int pin)
     gpio_pull_up(pin);
 }
 
+// Inicializa e configura um pino como saída e define o valor inicial como false
 void SetOutput(int pin)
 {
     gpio_init(pin);
     gpio_set_dir(pin, true);
-    gpio_put(pin, 0);
+    gpio_put(pin, false);
 }
