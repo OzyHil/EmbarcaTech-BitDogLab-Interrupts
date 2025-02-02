@@ -36,7 +36,7 @@ int main()
     color.blue = 8;
 
     // Inicializa o desenho com o número 0 e exibe na matriz
-    double *drawing = Drawing(0);
+    drawing = Drawing(0);
     Draw(drawing, valorLed, pio, color);
 
     // Configura o timer para alternar o estado do LED a cada 100 ms
