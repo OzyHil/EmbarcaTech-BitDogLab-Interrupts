@@ -2,7 +2,7 @@
 
 ## Vídeo de Demonstração
 
-O vídeo de demonstração pode ser encontrado https://youtu.be/kJ67gHHnHos.
+O vídeo de demonstração: https://youtu.be/kJ67gHHnHos.
 
 ## Descrição
 
