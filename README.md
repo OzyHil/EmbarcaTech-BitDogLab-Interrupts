@@ -2,7 +2,7 @@
 
 ## Vídeo de Demonstração
 
-O vídeo de demonstração pode ser encontrado [aqui].
+O vídeo de demonstração pode ser encontrado https://youtu.be/kJ67gHHnHos.
 
 ## Descrição
 
@@ -17,7 +17,7 @@ Este projeto foi desenvolvido por mim, **Hilquias Rodrigues de Oliveira**, com o
 ## Componentes Utilizados
 
 - **Matriz 5x5 de LEDs WS2812** (GPIO 7)
-- **LED RGB** (pinos GPIOs 11, 12, 13)
+- **LED RGB na cor vermelha** (GPIO 13)
 - **Botão A** (GPIO 5)
 - **Botão B** (GPIO 6)
 
