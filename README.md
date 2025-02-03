@@ -30,7 +30,16 @@ Este projeto foi desenvolvido por mim, **Hilquias Rodrigues de Oliveira**, com o
 
 ## Como Executar
 
-1. Conecte a placa **BitDogLab** via USB, e coloque-a em **modo BOOTSEL**.
-2. Compile o código e envie para a placa **BitDogLab**.
-3. Interaja com o sistema pressionando os botões A e B para alterar o número exibido na matriz de LEDs.
-4. O LED RGB piscará continuamente a cada 0.2 segundos (5Hz).
+Obs: Certifique-se de que você tem o ambiente configurado: 
+- Pico SDK instalado
+- Extensões Raspberry Pi Pico, CMake e C/C++
+  
+1. Clone este repositório e abra a pasta do projeto no VSCode.  
+2. A extensão **Pi Pico** criará automaticamente a pasta `build`.  
+3. Clique em **Compile** na barra inferior do VSCode (ao lado esquerdo de "RUN | PICO SDK").  
+4. Verifique se o arquivo `.uf2` foi gerado corretamente na pasta `build`.  
+5. **Conecte a placa BitDogLab via USB** e coloque-a em **modo BOOTSEL**. 
+6. Arraste o arquivo **`.uf2`** gerado para dentro da unidade de armazenamento da placa.  
+7. O código será carregado e **executado automaticamente**.  
+8. O LED RGB piscará continuamente a cada 0.2 segundos (5Hz) e será mostrado o número 0 na matriz.
+9. Interaja com o sistema pressionando os botões A e B para alterar o número exibido na matriz de LEDs.
